@@ -1,0 +1,54 @@
+{
+    "name": "hgflimited/php-tika",
+    "description": "A PHP Client for TikaJAXRS",
+    "keywords": [
+        "HGF Limited",
+        "php-tika",
+        "ocr",
+        "document-parser"
+    ],
+    "homepage": "https://github.com/hgflimited/php-tika",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "HGF Limited",
+            "email": "itsupport@hgf.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3"
+    },
+    "require-dev": {
+        "larapack/dd": "^1.0",
+        "phpunit/phpunit": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "HGF\\Tika\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HGF\\Tika\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HGF\\Tika\\DocumentParserServiceProvider"
+            ],
+            "aliases": {
+                "DocumentParser": "HGF\\Tika\\DocumentParserFacade",
+                "Tika": "HGF\\Tika\\Tika\\TikaFacade"
+            }
+        }
+    }
+}
